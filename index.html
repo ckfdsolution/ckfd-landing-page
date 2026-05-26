@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CKFD Solution — Agents IA & Automatisation</title>
+  <meta name="description" content="CKFD Solution conçoit des agents IA et automatise vos process pour libérer le potentiel de votre entreprise. Basés à Clermont-Ferrand.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">CK</div>
+      ckfd solution
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="#accueil">accueil</a></li>
+      <li><a href="#services">services</a></li>
+      <li><a href="#cas-usage">cas d'usage</a></li>
+      <li><a href="#methodologie">méthodologie</a></li>
+      <li><a href="#a-propos">à propos</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="contact.html" class="btn btn-primary">démarrer</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#accueil" onclick="closeMobileMenu()">accueil</a>
+  <a href="#services" onclick="closeMobileMenu()">services</a>
+  <a href="#cas-usage" onclick="closeMobileMenu()">cas d'usage</a>
+  <a href="#methodologie" onclick="closeMobileMenu()">méthodologie</a>
+  <a href="#a-propos" onclick="closeMobileMenu()">à propos</a>
+  <a href="contact.html">contact</a>
+  <a href="contact.html" class="btn btn-primary">démarrer</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="accueil">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="tag">agence d'agents IA · clermont-ferrand</div>
+      <h1 class="hero-title">
+        prenez le virage de<br>
+        <span>l'intelligence artificielle.</span>
+      </h1>
+      <p class="hero-subtitle">
+        ckfd solution conçoit des agents IA et automatise vos process
+        pour libérer le potentiel de votre entreprise.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">démarrer un projet</a>
+        <a href="#services" class="btn btn-outline btn-lg">découvrir nos services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stat-item">
+      <div class="stat-number">70%</div>
+      <div class="stat-label">de temps gagné sur les tâches répétitives</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">agents disponibles en permanence</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2–4 sem</div>
+      <div class="stat-label">pour déployer un premier agent</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="tag">nos services</div>
+      <h2 class="section-title">trois leviers pour transformer<br>votre entreprise.</h2>
+      <p class="section-subtitle" style="margin-top:16px;">
+        Des solutions IA concrètes, mesurables et adaptées à votre métier.
+      </p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>agents IA sur mesure</h3>
+        <p>
+          Conception et déploiement d'agents intelligents qui opèrent à votre place sur les tâches chronophages.
+          Prise de RDV automatique, suivi de devis, relances clients, facturation — vos agents travaillent 24h/24.
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">prise de RDV</span>
+          <span class="service-tag">relances</span>
+          <span class="service-tag">facturation</span>
+          <span class="service-tag">support client</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>automatisation de process</h3>
+        <p>
+          Cartographie et automatisation de vos flux de travail les plus coûteux en temps.
+          Connectez vos outils, éliminez les tâches manuelles répétitives et gagnez en efficacité opérationnelle.
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">workflow</span>
+          <span class="service-tag">intégrations</span>
+          <span class="service-tag">n8n / make</span>
+          <span class="service-tag">APIs</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>conseil & stratégie IA</h3>
+        <p>
+          Audit de vos processus, identification des opportunités à fort ROI et construction d'une feuille de route IA
+          adaptée à votre taille et à vos objectifs. Pragmatique et orienté résultats.
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">audit</span>
+          <span class="service-tag">roadmap</span>
+          <span class="service-tag">ROI</span>
+          <span class="service-tag">formation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAS D'USAGE ===== -->
+<section class="use-cases" id="cas-usage">
+  <div class="container">
+    <div class="use-cases-header">
+      <div class="tag">cas d'usage</div>
+      <h2 class="section-title">ce que l'IA change concrètement<br>dans votre métier.</h2>
+      <p class="section-subtitle" style="margin-top:16px;">
+        Voici quelques exemples de projets que nous concevons pour nos clients.
+        Le vôtre n'est pas dans la liste&nbsp;? Parlons-en.
+      </p>
+    </div>
+    <div class="use-cases-grid">
+
+      <div class="usecase-card">
+        <div class="usecase-metric">−60% de tickets support</div>
+        <div class="usecase-sector">E-commerce & Retail</div>
+        <h3>assistant shopping & support 24/7</h3>
+        <p>Agent IA répondant aux questions produits, suivant les commandes et qualifiant les demandes complexes vers les équipes humaines.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-metric">×3 leads qualifiés</div>
+        <div class="usecase-sector">Services B2B</div>
+        <h3>qualification de leads automatisée</h3>
+        <p>Détection d'intentions, enrichissement, scoring et prise de RDV automatique directement dans le CRM.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-metric">5h/semaine économisées</div>
+        <div class="usecase-sector">Cabinets & Professions libérales</div>
+        <h3>synthèse automatique de dossiers</h3>
+        <p>Lecture, résumé et classification de documents avec validation humaine intégrée au workflow.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-metric">−40% temps d'intervention</div>
+        <div class="usecase-sector">Industrie</div>
+        <h3>assistant maintenance & doc technique</h3>
+        <p>Recherche documentaire instantanée, génération de procédures et aide au diagnostic pour les techniciens terrain.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-metric">100% des appels traités</div>
+        <div class="usecase-sector">Santé & Médico-social</div>
+        <h3>standard téléphonique intelligent</h3>
+        <p>Prise de RDV vocale, qualification et transmission sécurisée, respectant les données de santé.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-metric">−70% questions répétitives</div>
+        <div class="usecase-sector">Formation & RH</div>
+        <h3>onboarding & FAQ interne</h3>
+        <p>Copilote collaborateurs pour répondre aux questions sur les politiques, procédures et outils en français naturel.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MÉTHODOLOGIE ===== -->
+<section class="methodology" id="methodologie">
+  <div class="container">
+    <div class="methodology-header">
+      <div class="tag">notre méthodologie</div>
+      <h2 class="section-title">une approche pragmatique en 4 étapes.</h2>
+      <p class="section-subtitle" style="margin-top:16px;">
+        pas de tunnel de plusieurs mois. on livre vite, on mesure, on itère.
+      </p>
+    </div>
+    <div class="steps-grid">
+
+      <div class="step-item">
+        <div class="step-number">01</div>
+        <div class="step-duration">1–2 semaines</div>
+        <h3>audit & cadrage</h3>
+        <p>Analyse de vos processus et identification des cas d'usage à fort ROI.</p>
+        <ul class="step-deliverables">
+          <li>cartographie des process</li>
+          <li>cas d'usage prioritaires</li>
+          <li>estimation ROI</li>
+        </ul>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">02</div>
+        <div class="step-duration">2–3 semaines</div>
+        <h3>conception & prototype</h3>
+        <p>Développement d'un prototype fonctionnel testé sur vos données réelles.</p>
+        <ul class="step-deliverables">
+          <li>architecture technique</li>
+          <li>prototype testable</li>
+          <li>plan de mesure</li>
+        </ul>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">03</div>
+        <div class="step-duration">2–4 semaines</div>
+        <h3>déploiement en production</h3>
+        <p>Mise en production sécurisée avec formation et intégration à vos outils existants.</p>
+        <ul class="step-deliverables">
+          <li>solution en production</li>
+          <li>documentation</li>
+          <li>formation équipes</li>
+        </ul>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">04</div>
+        <div class="step-duration">en continu</div>
+        <h3>amélioration continue</h3>
+        <p>Suivi des indicateurs, itérations et extensions à de nouveaux cas d'usage.</p>
+        <ul class="step-deliverables">
+          <li>tableaux de bord</li>
+          <li>itérations mensuelles</li>
+          <li>roadmap évolutive</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== À PROPOS ===== -->
+<section class="about" id="a-propos">
+  <div class="container">
+    <div class="about-text">
+      <div class="tag">à propos</div>
+      <h2 class="section-title">une agence IA proche,<br>pragmatique et engagée.</h2>
+      <p class="about-description">
+        CKFD Solution est une agence d'agents IA basée à Clermont-Ferrand (Puy-de-Dôme).
+        Nous concevons et déployons des agents intelligents et des automatisations sur mesure
+        pour aider les organisations à économiser du temps et à optimiser leurs processus.
+      </p>
+      <p class="about-conviction">
+        « l'intelligence artificielle ne doit pas être réservée aux géants. »
+      </p>
+      <p class="about-description" style="margin-bottom:0;">
+        Nous accompagnons les TPE, PME, ETI et collectivités de notre territoire — en présentiel
+        à Clermont-Ferrand ou à distance partout en France.
+      </p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🧱</div>
+        <h4>approche métier</h4>
+        <p>Nous parlons votre langue. Nos solutions s'intègrent à vos process existants sans refonte globale.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h4>time-to-value rapide</h4>
+        <p>Premier résultat mesurable en 2 à 4 semaines. Pas de promesses, des livrables.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📊</div>
+        <h4>mesure du ROI</h4>
+        <p>Chaque mission est accompagnée d'indicateurs clairs. On s'engage sur les résultats, pas les heures.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h4>souveraineté & confidentialité</h4>
+        <p>Vos données restent les vôtres. Hébergement souverain disponible, RGPD respecté.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-box">
+      <div class="tag">passons à l'action</div>
+      <h2 class="section-title">prêt à automatiser ?<br>échangeons 30 minutes.</h2>
+      <p class="section-subtitle" style="margin-top:1rem;">
+        Un premier échange gratuit pour analyser vos besoins et identifier les opportunités à fort ROI.
+      </p>
+      <div class="cta-perks" style="margin-top:1.5rem;">
+        <div class="cta-perk"><div class="cta-perk-dot"></div>premier échange 100% gratuit</div>
+        <div class="cta-perk"><div class="cta-perk-dot"></div>réponse sous 24h ouvrées</div>
+        <div class="cta-perk"><div class="cta-perk-dot"></div>aucun engagement</div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="contact.html" class="btn btn-primary btn-lg">réserver un échange →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo">
+          <div class="logo-icon">CK</div>
+          ckfd solution
+        </a>
+        <p class="footer-description">
+          Agence d'agents IA et d'automatisation basée à Clermont-Ferrand.
+          Nous aidons les TPE, PME et ETI à adopter l'IA de façon pragmatique et mesurable.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>navigation</h4>
+        <ul>
+          <li><a href="index.html">accueil</a></li>
+          <li><a href="#services">services</a></li>
+          <li><a href="#cas-usage">cas d'usage</a></li>
+          <li><a href="#methodologie">méthodologie</a></li>
+          <li><a href="#a-propos">à propos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>services</h4>
+        <ul>
+          <li><a href="#services">agents IA sur mesure</a></li>
+          <li><a href="#services">automatisation</a></li>
+          <li><a href="#services">conseil & stratégie</a></li>
+          <li><a href="contact.html">démarrer un projet</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>contact</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span>Clermont-Ferrand, Puy-de-Dôme (63)<br>Auvergne-Rhône-Alpes</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <a href="mailto:contact@ckfdsolution.fr" style="color: var(--text-muted);">contact@ckfdsolution.fr</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <span>réponse sous 24h ouvrées</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CKFD Solution. Tous droits réservés.</p>
+      <p>Agence IA · Clermont-Ferrand · France</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

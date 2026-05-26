@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — CKFD Solution</title>
+  <meta name="description" content="Parlons de votre projet IA. CKFD Solution répond sous 24h ouvrées. Premier échange gratuit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">CK</div>
+      ckfd solution
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="index.html#accueil">accueil</a></li>
+      <li><a href="index.html#services">services</a></li>
+      <li><a href="index.html#cas-usage">cas d'usage</a></li>
+      <li><a href="index.html#methodologie">méthodologie</a></li>
+      <li><a href="index.html#a-propos">à propos</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="contact.html" class="btn btn-primary">démarrer</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#accueil">accueil</a>
+  <a href="index.html#services">services</a>
+  <a href="index.html#cas-usage">cas d'usage</a>
+  <a href="index.html#methodologie">méthodologie</a>
+  <a href="index.html#a-propos">à propos</a>
+  <a href="contact.html">contact</a>
+  <a href="contact.html" class="btn btn-primary">démarrer</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="tag">contact</div>
+    <h1 class="section-title">parlons de votre projet.</h1>
+    <p class="section-subtitle" style="margin-top:1rem;">
+      Décrivez-nous votre besoin en quelques lignes,<br>nous revenons vers vous sous 24h ouvrées.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CONTACT LAYOUT ===== -->
+<section class="contact-layout">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info sidebar -->
+      <div class="contact-info-card">
+        <h3>informations de contact</h3>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text">
+            <strong>email</strong>
+            <span><a href="mailto:contact@ckfdsolution.fr" style="color:var(--text-muted);text-decoration:none;">contact@ckfdsolution.fr</a></span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <strong>localisation</strong>
+            <span>Clermont-Ferrand, Puy-de-Dôme (63)<br>Auvergne-Rhône-Alpes</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <strong>délai de réponse</strong>
+            <span>sous 24h ouvrées</span>
+          </div>
+        </div>
+
+        <div class="engagements">
+          <h4>nos engagements</h4>
+          <div class="engagement-item">
+            <div class="engagement-dot"></div>
+            réponse sous 24h ouvrées
+          </div>
+          <div class="engagement-item">
+            <div class="engagement-dot"></div>
+            premier échange gratuit (30 min)
+          </div>
+          <div class="engagement-item">
+            <div class="engagement-dot"></div>
+            confidentialité absolue de vos données
+          </div>
+          <div class="engagement-item">
+            <div class="engagement-dot"></div>
+            aucun engagement après l'échange
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <form id="contactForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">nom<span class="required">*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
+            </div>
+            <div class="form-group">
+              <label for="email">email<span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="jean@entreprise.fr" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="entreprise">entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise (optionnel)">
+            </div>
+            <div class="form-group">
+              <label for="telephone">téléphone</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00 (optionnel)">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="sujet">sujet<span class="required">*</span></label>
+            <select id="sujet" name="sujet" required>
+              <option value="" disabled selected>Choisissez un sujet...</option>
+              <option value="Conception d'un agent IA">Conception d'un agent IA</option>
+              <option value="Automatisation de process">Automatisation de process</option>
+              <option value="Audit & conseil stratégique">Audit & conseil stratégique</option>
+              <option value="Autre demande">Autre demande</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">votre message<span class="required">*</span></label>
+            <textarea id="message" name="message" placeholder="Décrivez votre besoin, votre contexte, vos objectifs..." required></textarea>
+          </div>
+
+          <p class="form-privacy" style="margin-bottom:16px;">
+            🔒 vos données ne sont jamais partagées. traitement confidentiel garanti.
+          </p>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit" id="submitBtn">
+            envoyer le message
+          </button>
+
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo">
+          <div class="logo-icon">CK</div>
+          ckfd solution
+        </a>
+        <p class="footer-description">
+          Agence d'agents IA et d'automatisation basée à Clermont-Ferrand.
+          Nous aidons les TPE, PME et ETI à adopter l'IA de façon pragmatique et mesurable.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>navigation</h4>
+        <ul>
+          <li><a href="index.html">accueil</a></li>
+          <li><a href="index.html#services">services</a></li>
+          <li><a href="index.html#cas-usage">cas d'usage</a></li>
+          <li><a href="index.html#methodologie">méthodologie</a></li>
+          <li><a href="index.html#a-propos">à propos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>services</h4>
+        <ul>
+          <li><a href="index.html#services">agents IA sur mesure</a></li>
+          <li><a href="index.html#services">automatisation</a></li>
+          <li><a href="index.html#services">conseil & stratégie</a></li>
+          <li><a href="contact.html">démarrer un projet</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>contact</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span>Clermont-Ferrand, Puy-de-Dôme (63)<br>Auvergne-Rhône-Alpes</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <a href="mailto:contact@ckfdsolution.fr" style="color:var(--text-muted);">contact@ckfdsolution.fr</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CKFD Solution. Tous droits réservés.</p>
+      <p>Agence IA · Clermont-Ferrand · France</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
