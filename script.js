@@ -60,6 +60,7 @@ if (contactForm) {
     const email = document.getElementById('email').value.trim();
     const sujet = document.getElementById('sujet').value;
     const message = document.getElementById('message').value.trim();
+    const consent = document.getElementById('consent').checked;
 
     if (!nom || !email || !sujet || !message) {
       showMessage('error', 'Veuillez remplir tous les champs obligatoires (*).');
@@ -71,10 +72,17 @@ if (contactForm) {
       return;
     }
 
+    if (!consent) {
+      showMessage('error', 'Veuillez accepter la politique de confidentialité pour envoyer votre message.');
+      return;
+    }
+
     // Loading state
     submitBtn.disabled = true;
     submitBtn.textContent = 'envoi en cours...';
     hideMessage();
+
+    const CONSENT_TEXT = "J'accepte que mes données soient utilisées par CKFD Solution pour traiter ma demande, conformément à la politique de confidentialité.";
 
     const payload = {
       nom,
@@ -83,6 +91,9 @@ if (contactForm) {
       telephone: document.getElementById('telephone').value.trim(),
       sujet,
       message,
+      consentement: true,
+      consentement_texte: CONSENT_TEXT,
+      consentement_date: new Date().toISOString(),
       source: 'landing-page',
       date: new Date().toISOString(),
     };
