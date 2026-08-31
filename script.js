@@ -1,10 +1,15 @@
-// === MOBILE MENU ===
+// === MENU MOBILE ===
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
 if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     mobileMenu.classList.toggle('open');
+  });
+  // Fermer le menu quand on clique un lien
+  mobileMenu.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 }
 
@@ -12,40 +17,42 @@ function closeMobileMenu() {
   if (mobileMenu) mobileMenu.classList.remove('open');
 }
 
-// Close on outside click
+// Fermer au clic à l'extérieur
 document.addEventListener('click', (e) => {
-  if (mobileMenu && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+  if (mobileMenu && mobileMenu.classList.contains('open') &&
+      !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
     mobileMenu.classList.remove('open');
   }
 });
 
-// === NAVBAR SCROLL EFFECT ===
+// === OMBRE DE LA NAVBAR AU DÉFILEMENT ===
 const navbar = document.querySelector('.navbar');
 if (navbar) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.style.background = 'rgba(8, 12, 16, 0.97)';
-    } else {
-      navbar.style.background = 'rgba(8, 12, 16, 0.85)';
-    }
-  });
+  const onScroll = () => {
+    navbar.style.boxShadow = window.scrollY > 20
+      ? '0 4px 20px rgba(26,26,26,.07)'
+      : 'none';
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 }
 
-// === SMOOTH SCROLL FOR ANCHOR LINKS ===
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+// === DÉFILEMENT DOUX POUR LES ANCRES INTERNES ===
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
+    const id = link.getAttribute('href');
+    if (id.length < 2) return;
+    const target = document.querySelector(id);
     if (target) {
       e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: 'smooth' });
       closeMobileMenu();
     }
   });
 });
 
-// === CONTACT FORM ===
+// === FORMULAIRE DE CONTACT (webhook n8n — NE PAS MODIFIER LE PAYLOAD) ===
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   const submitBtn = document.getElementById('submitBtn');
@@ -55,7 +62,7 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Basic validation
+    // Validation basique
     const nom = document.getElementById('nom').value.trim();
     const email = document.getElementById('email').value.trim();
     const sujet = document.getElementById('sujet').value;
@@ -77,9 +84,9 @@ if (contactForm) {
       return;
     }
 
-    // Loading state
+    // État de chargement
     submitBtn.disabled = true;
-    submitBtn.textContent = 'envoi en cours...';
+    submitBtn.textContent = 'Envoi en cours...';
     hideMessage();
 
     const CONSENT_TEXT = "J'accepte que mes données soient utilisées par CKFD Solution pour traiter ma demande, conformément à la politique de confidentialité.";
@@ -115,7 +122,7 @@ if (contactForm) {
       showMessage('error', 'Une erreur est survenue. Réessayez ou contactez-nous directement par email.');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'envoyer le message';
+      submitBtn.textContent = 'Envoyer le message';
     }
   });
 
@@ -135,26 +142,20 @@ if (contactForm) {
   }
 }
 
-// === SCROLL REVEAL ANIMATION ===
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -40px 0px',
-};
+// === ANIMATION D'APPARITION AU DÉFILEMENT ===
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && revealEls.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${(i % 4) * 0.06}s`;
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-// Apply to cards and step items
-document.querySelectorAll('.service-card, .usecase-card, .step-item, .value-card').forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
-  observer.observe(el);
-});
+  revealEls.forEach((el) => observer.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add('in'));
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 470" width="420" height="470">
+  <g fill="none" stroke="#1A1A1A" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- cheveux -->
+    <path d="M178 106 c7 -15 23 -19 32 -9"/>
+    <path d="M210 97 c9 -13 26 -11 32 3"/>
+
+    <!-- tete -->
+    <circle cx="210" cy="160" r="52" fill="#FFFFFF"/>
+
+    <!-- sourire -->
+    <path d="M182 168 c10 26 46 26 56 0 z" fill="#FFFFFF"/>
+    <path d="M182 168 h56"/>
+
+    <!-- corps -->
+    <path d="M210 212 v118"/>
+
+    <!-- bras leves -->
+    <path d="M210 238 L150 204 L120 132"/>
+    <path d="M210 238 L270 206 L302 136"/>
+
+    <!-- jambes -->
+    <path d="M210 330 L168 438"/>
+    <path d="M210 330 L252 438"/>
+  </g>
+
+  <!-- yeux -->
+  <ellipse cx="192" cy="150" rx="7" ry="9" fill="#1A1A1A"/>
+  <ellipse cx="228" cy="146" rx="7" ry="9" fill="#1A1A1A"/>
+
+  <!-- mains -->
+  <circle cx="114" cy="120" r="12" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="6.5"/>
+  <circle cx="308" cy="124" r="12" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="6.5"/>
+
+  <!-- pieds -->
+  <g fill="#FFFFFF" stroke="#1A1A1A" stroke-width="6.5" stroke-linejoin="round">
+    <ellipse cx="160" cy="443" rx="17" ry="8" transform="rotate(-8 160 443)"/>
+    <ellipse cx="260" cy="443" rx="17" ry="8" transform="rotate(8 260 443)"/>
+  </g>
+
+  <!-- feuilles qui volent -->
+  <g fill="#FFFFFF" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <g stroke="#1A1A1A">
+      <path transform="translate(96 26) rotate(-18) scale(1.05)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+      <path transform="translate(196 8) rotate(12)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+      <path transform="translate(32 196) rotate(24) scale(.92)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+      <path transform="translate(336 176) rotate(-26) scale(.92)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+      <path transform="translate(96 330) rotate(-14) scale(.85)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+      <path transform="translate(320 300) rotate(18) scale(.88)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+    </g>
+    <g stroke="#FF9A3C">
+      <path transform="translate(298 18) rotate(-8) scale(.9)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+      <path transform="translate(38 290) rotate(8) scale(.85)"
+            d="M0 12 C18 0 42 2 62 10 C66 32 64 46 60 58 C40 48 16 48 0 60 C4 44 4 28 0 12 Z"/>
+    </g>
+  </g>
+
+  <!-- traits de mouvement -->
+  <g stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M166 44 l16 -8"/>
+    <path d="M170 58 l16 -8"/>
+    <path d="M330 158 l-16 6"/>
+    <path d="M96 300 l-16 6"/>
+    <path d="M318 282 l16 6"/>
+  </g>
+</svg>
