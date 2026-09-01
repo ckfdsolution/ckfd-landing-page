@@ -52,7 +52,10 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-// === FORMULAIRE DE CONTACT (webhook n8n — NE PAS MODIFIER LE PAYLOAD) ===
+// === FORMULAIRE DE CONTACT ===
+// Le payload est synchronisé avec le workflow n8n "CKFD - Capture lead landing page avec IA"
+// (id FGPfYR2SYdifxJRF). Toute modification des clés ci-dessous doit être répercutée
+// dans les nœuds Sheets / OpenAI / Gmail de ce workflow, sinon les champs arrivent vides.
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   const submitBtn = document.getElementById('submitBtn');
@@ -63,19 +66,27 @@ if (contactForm) {
     e.preventDefault();
 
     // Validation basique
+    const prenom = document.getElementById('prenom').value.trim();
     const nom = document.getElementById('nom').value.trim();
     const email = document.getElementById('email').value.trim();
+    const telephone = document.getElementById('telephone').value.trim();
+    const metier = document.getElementById('metier').value.trim();
     const sujet = document.getElementById('sujet').value;
     const message = document.getElementById('message').value.trim();
     const consent = document.getElementById('consent').checked;
 
-    if (!nom || !email || !sujet || !message) {
+    if (!prenom || !nom || !email || !telephone || !metier || !sujet || !message) {
       showMessage('error', 'Veuillez remplir tous les champs obligatoires (*).');
       return;
     }
 
     if (!isValidEmail(email)) {
       showMessage('error', 'Veuillez entrer une adresse email valide.');
+      return;
+    }
+
+    if (!isValidPhone(telephone)) {
+      showMessage('error', 'Veuillez entrer un numéro de téléphone valide (ex. 06 12 34 56 78).');
       return;
     }
 
@@ -92,10 +103,12 @@ if (contactForm) {
     const CONSENT_TEXT = "J'accepte que mes données soient utilisées par CKFD Solution pour traiter ma demande, conformément à la politique de confidentialité.";
 
     const payload = {
+      prenom,
       nom,
-      email,
+      metier,
       entreprise: document.getElementById('entreprise').value.trim(),
-      telephone: document.getElementById('telephone').value.trim(),
+      email,
+      telephone,
       sujet,
       message,
       consentement: true,
@@ -139,6 +152,12 @@ if (contactForm) {
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  // Accepte 06 12 34 56 78, 0612345678, +33 6 12 34 56 78, (0)6...
+  function isValidPhone(tel) {
+    const digits = tel.replace(/[^0-9]/g, '');
+    return /^[+0-9][0-9\s.\-()]{6,}$/.test(tel) && digits.length >= 9 && digits.length <= 15;
   }
 }
 

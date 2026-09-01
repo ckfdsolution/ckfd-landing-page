@@ -53,6 +53,29 @@
   </div>
 </section>
 
+<!-- ===== DEUX CHEMINS ===== -->
+<section style="padding-top:0;padding-bottom:0;">
+  <div class="container">
+    <div class="choice-grid">
+
+      <div class="choice-card is-primary">
+        <h3>Réserver directement un créneau</h3>
+        <p>Vous savez déjà quand vous êtes disponible ? Choisissez votre horaire dans notre agenda&nbsp;: 30&nbsp;minutes, gratuites et sans engagement.</p>
+        <a href="https://calendar.app.google/aa6oMMC3tBxq9meV6" class="btn btn-primary btn-lg" target="_blank" rel="noopener">📅 Prendre rendez-vous</a>
+        <p class="choice-note">Confirmation immédiate, sans attendre notre réponse.</p>
+      </div>
+
+      <div class="choice-card">
+        <h3>Ou expliquez-nous votre besoin</h3>
+        <p>Vous préférez d'abord nous écrire&nbsp;? Décrivez votre situation en quelques lignes, nous revenons vers vous sous 24&nbsp;h ouvrées.</p>
+        <a href="#contactForm" class="btn btn-ghost btn-lg">Remplir le formulaire</a>
+        <p class="choice-note">Réponse personnalisée de Karine ou Cécile.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT LAYOUT ===== -->
 <section style="padding-top:0;">
   <div class="container">
@@ -110,23 +133,76 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="nom">Nom<span class="required">*</span></label>
-              <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
+              <label for="prenom">Prénom<span class="required">*</span></label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
             </div>
             <div class="form-group">
-              <label for="email">Email<span class="required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="jean@entreprise.fr" required>
+              <label for="nom">Nom<span class="required">*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Dupont" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="entreprise">Entreprise</label>
-              <input type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise (optionnel)">
+              <label for="email">Email<span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="jean@entreprise.fr" required>
             </div>
             <div class="form-group">
-              <label for="telephone">Téléphone</label>
-              <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00 (optionnel)">
+              <label for="telephone">Téléphone<span class="required">*</span></label>
+              <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="metier">Votre métier<span class="required">*</span></label>
+              <input type="text" id="metier" name="metier" list="metiers" placeholder="Plombier, kinésithérapeute, coiffeur..." required autocomplete="off">
+              <datalist id="metiers">
+                <option value="Plombier">
+                <option value="Électricien">
+                <option value="Chauffagiste">
+                <option value="Menuisier">
+                <option value="Ébéniste">
+                <option value="Charpentier">
+                <option value="Maçon">
+                <option value="Carreleur">
+                <option value="Peintre en bâtiment">
+                <option value="Couvreur">
+                <option value="Serrurier">
+                <option value="Ferronnier d'art">
+                <option value="Terrassier">
+                <option value="Paysagiste">
+                <option value="Jardinier">
+                <option value="Mécanicien">
+                <option value="Carrossier">
+                <option value="Taxi / VTC">
+                <option value="Boulanger">
+                <option value="Pâtissier">
+                <option value="Boucher">
+                <option value="Restaurateur">
+                <option value="Coiffeur">
+                <option value="Esthéticienne">
+                <option value="Photographe">
+                <option value="Graphiste">
+                <option value="Architecte">
+                <option value="Géomètre">
+                <option value="Agent immobilier">
+                <option value="Kinésithérapeute">
+                <option value="Infirmier libéral">
+                <option value="Ostéopathe">
+                <option value="Sage-femme">
+                <option value="Orthophoniste">
+                <option value="Psychologue">
+                <option value="Sophrologue">
+                <option value="Diététicien">
+                <option value="Avocat">
+                <option value="Consultant">
+                <option value="Formateur">
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label for="entreprise">Entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise (optionnel)">
             </div>
           </div>
 
