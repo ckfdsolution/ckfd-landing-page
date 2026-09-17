@@ -1,5 +1,5 @@
 /* =========================================================
-   CKFD SOLUTION — Feuille de style
+   CKFD SOLUTION · Feuille de style
    Charte claire + accent orange (marque ckfd)
    Gestion administrative · Puy-de-Dôme
    ========================================================= */
@@ -12,8 +12,8 @@
 :root {
   /* Couleurs */
   --bg:          #ffffff;
-  --bg-soft:     #faf7f2;   /* crème doux — sections alternées */
-  --bg-warm:     #fdf1e2;   /* orange très clair — bandes accent */
+  --bg-soft:     #faf7f2;   /* crème doux : sections alternées */
+  --bg-warm:     #fdf1e2;   /* orange très clair : bandes accent */
   --ink:         #1a1a1a;   /* titres */
   --text:        #45474d;   /* corps */
   --muted:       #6b7280;   /* secondaire */
@@ -21,7 +21,7 @@
   --accent:      #f4a03c;   /* orange marque */
   --accent-strong:#e07d14;  /* orange foncé (hover) */
   --accent-ink:  #b85c0a;   /* orange lisible pour petit texte sur blanc */
-  --accent-soft: #fdecd6;   /* orange pâle — pastilles, tags */
+  --accent-soft: #fdecd6;   /* orange pâle : pastilles, tags */
   --white:       #ffffff;
 
   /* Rayons & ombres */
@@ -105,7 +105,7 @@ section { padding: 84px 0; }
 .navbar .container { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); }
 
 .navbar-logo { display: flex; align-items: center; gap: 12px; }
-.navbar-logo img { height: 38px; width: auto; }
+.navbar-logo img { height: 54px; width: auto; }
 .navbar-logo .logo-baseline { display: flex; flex-direction: column; line-height: 1.05; }
 .navbar-logo .logo-name { font-weight: 800; color: var(--ink); font-size: 1.15rem; letter-spacing: -.02em; }
 .navbar-logo .logo-name span { color: var(--accent); }
@@ -142,10 +142,10 @@ section { padding: 84px 0; }
 
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
 .hero-brand { text-align: center; }
-.hero-brand img { width: 380px; max-width: 100%; height: auto; }
+.hero-brand img { width: 274px; max-width: 100%; height: auto; }
 .hero-brand-sub { margin-top: 10px; color: var(--muted); font-weight: 600; letter-spacing: .02em; font-size: .95rem; }
 
-/* Chaîne des Puys — ligne orange (haut & bas de page) */
+/* Chaîne des Puys : ligne orange (haut & bas de page) */
 .puys { width: 100%; line-height: 0; overflow: hidden; }
 .puys svg { width: 100%; height: auto; display: block; transform: scaleX(-1); } /* miroir : Pariou à droite */
 .puys-fill { fill: #fdeede; }
@@ -236,7 +236,7 @@ section { padding: 84px 0; }
 /* ---------- FAQ ---------- */
 .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 40px; max-width: 960px; margin: 0 auto; }
 .faq-item h4 { font-size: 1.05rem; margin-bottom: 6px; }
-.faq-item h4::before { content: "— "; color: var(--accent); }
+.faq-item h4::before { content: "› "; color: var(--accent); }
 .faq-item p { color: var(--text); font-size: .96rem; margin: 0; }
 
 /* ---------- Étapes (méthodo) ---------- */
