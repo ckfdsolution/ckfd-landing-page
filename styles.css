@@ -389,3 +389,15 @@ footer h4 { color: #fff; font-size: .82rem; text-transform: uppercase; letter-sp
   .stats-grid, .faq-grid, .form-row, .footer-grid { grid-template-columns: 1fr; }
   .navbar-logo .logo-sub { display: none; }
 }
+
+/* ---------- Page démo ---------- */
+.demo-layout { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 48px; align-items: start; }
+.demo-frame iframe { width: 100%; height: 680px; border: 0; display: block; }
+.demo-note { text-align: center; color: var(--muted); font-size: .85rem; margin: 10px 0 0; }
+.demo-guide h2 { font-size: 1.6rem; margin-bottom: 18px; }
+.demo-steps { padding-left: 22px; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.demo-punch { border-left: 4px solid var(--accent); padding: 4px 0 4px 16px; font-weight: 600; color: var(--ink); }
+@media (max-width: 860px) {
+  .demo-layout { grid-template-columns: 1fr; gap: 32px; }
+  .demo-frame { max-width: 420px; width: 100%; margin: 0 auto; }
+}

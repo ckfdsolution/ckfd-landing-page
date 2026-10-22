@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démo · Débrief vocal · CKFD Solution</title>
+  <meta name="description" content="Démo d'un outil CKFD Solution : l'artisan dicte sa journée en 30 secondes, facture, commande, rendez-vous et relance sont prêts à valider. Outils sur mesure, sur devis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <img src="assets/logo-ckfd.png" alt="ckfd solution, gestion administrative">
+      <span class="logo-sub">Gestion administrative · Puy-de-Dôme</span>
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+      <li><a href="offres.html">Offres &amp; tarifs</a></li>
+      <li><a href="demo.html" class="active">Démo</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="contact.html" class="btn btn-primary">Audit gratuit</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Accueil</a>
+  <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+  <a href="offres.html">Offres &amp; tarifs</a>
+  <a href="demo.html">Démo</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Audit gratuit</a>
+</div>
+
+<!-- ===== EN-TÊTE ===== -->
+<section class="section-tight" style="padding-top:64px;">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="tag">Démo · Le débrief vocal</div>
+      <h1 class="section-title">30 secondes de dictée, 4 documents prêts.</h1>
+      <p class="section-subtitle">Fin de journée, dans le camion. Thomas, plombier, raconte sa journée en vrac. L'outil fait le tri et lui prépare le travail. Essayez par vous-même.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LA DÉMO ===== -->
+<section style="padding-top:24px;">
+  <div class="container">
+    <div class="demo-layout">
+      <div class="demo-frame">
+        <iframe id="demoFrame" src="demo/debrief-vocal.html" title="Démo interactive du débrief vocal" loading="lazy"></iframe>
+        <p class="demo-note">Maquette de démonstration · données fictives</p>
+      </div>
+      <div class="demo-guide">
+        <h2>Comment l'essayer</h2>
+        <ol class="demo-steps">
+          <li><strong>Appuyez sur le micro.</strong> La dictée défile, avec les mots du chantier : « le mitigeur thermo », « toujours pas payé ».</li>
+          <li><strong>Regardez le tri.</strong> Un seul message donne une facture, une commande, un rendez-vous et une relance.</li>
+          <li><strong>Ouvrez la facture Martin.</strong> La vanne ajoutée à l'oral est déjà dans les lignes, reprises du devis signé.</li>
+          <li><strong>Ouvrez le devis de Mme Petit.</strong> L'outil n'invente pas les mesures : il signale ce qui manque.</li>
+          <li><strong>Ouvrez la relance Dupont.</strong> Choisissez le ton, cordial ou ferme.</li>
+          <li><strong>Validez.</strong> Rien ne part sans votre accord.</li>
+        </ol>
+        <p class="demo-punch">Ce soir, Thomas n'a pas ouvert son ordinateur. Il a parlé 30 secondes et validé 4 fois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-box">
+      <div class="tag">Outils sur mesure</div>
+      <h2 class="section-title">Et pour votre entreprise ?</h2>
+      <p class="section-subtitle">
+        Chaque outil est conçu pour votre façon de travailler, avec vos clients, vos fournisseurs et vos logiciels.
+        On en parle lors de l'audit gratuit, puis on vous fait un devis.
+      </p>
+      <div class="cta-perks">
+        <div class="cta-perk">Adapté à votre métier</div>
+        <div class="cta-perk">Vous validez tout</div>
+        <div class="cta-perk">Sur devis</div>
+      </div>
+      <div style="margin-top:28px;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Demander mon audit gratuit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-name">ckfd <span>solution</span></span>
+        </div>
+        <p class="footer-description">
+          Gestion administrative pour les artisans, professions libérales et TPE du Puy-de-Dôme.
+          Vous faites votre métier, nous veillons sur le reste.
+        </p>
+        <span class="footer-immat">SAS · RCS Clermont-Ferrand 131 251 092</span>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="offres.html">Offres &amp; tarifs</a></li>
+          <li><a href="demo.html">Démo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nos formules</h4>
+        <ul>
+          <li><a href="offres.html">À jour</a></li>
+          <li><a href="offres.html">Développement</a></li>
+          <li><a href="offres.html">Pilotage</a></li>
+          <li><a href="offres.html#rh">Gestion RH</a></li>
+          <li><a href="offres.html#outils">Outils sur mesure</a></li>
+          <li><a href="contact.html">Audit gratuit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">📍 <span>Puy-de-Dôme (63)<br>Auvergne-Rhône-Alpes</span></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:contact@ckfdsolution.fr">contact@ckfdsolution.fr</a></div>
+        <div class="footer-contact-item">📞 <span>Karine · <a href="tel:+33679020512">06 79 02 05 12</a><br>Cécile · <a href="tel:+33613632415">06 13 63 24 15</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CKFD Solution. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      </div>
+      <p>Gestion administrative · Puy-de-Dôme</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Ajuste la hauteur de l'iframe de démo à son contenu
+  window.addEventListener('message', (e) => {
+    const h = e.data && e.data.ckfdDemoHeight;
+    if (h) document.getElementById('demoFrame').style.height = h + 'px';
+  });
+</script>
+</body>
+</html>

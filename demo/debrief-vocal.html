@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Débrief vocal · démo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+:root{
+  --bg:transparent; --surface:#ffffff; --ink:#18212b; --muted:#5d6874; --line:#ece8e1;
+  --copper:#b85c0a; --copper-soft:#fdecd6; --ok:#2f7a4f; --ok-soft:#e1f1e7; --warn:#a46a00; --warn-soft:#fbf0d6;
+  --paper:#faf7f2;
+  --f-display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding:2px}
+.badge{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* phone */
+.app{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:640px;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.who{font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+.who small{display:block;font-family:var(--f-body);font-size:12px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)}
+.screen{flex:1;padding:18px;display:flex;flex-direction:column;gap:14px}
+h2{font-family:var(--f-display);font-size:28px;line-height:1.05;margin:0;text-wrap:balance;font-weight:700}
+.lead{color:var(--muted);margin:0}
+.mic{margin:auto;width:150px;height:150px;border-radius:50%;border:none;background:var(--copper);color:#fff;cursor:pointer;
+  display:grid;place-items:center;font-family:var(--f-display);font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;position:relative}
+.mic svg{width:46px;height:46px;margin-bottom:4px}
+.mic:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.mic.rec::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:3px solid var(--copper);animation:pulse 1.2s infinite}
+@keyframes pulse{from{opacity:.9;transform:scale(.95)}to{opacity:0;transform:scale(1.2)}}
+.hint{text-align:center;color:var(--muted);font-size:13px;margin:0}
+.transcript{background:var(--paper);border:1px dashed var(--line);border-radius:12px;padding:14px;font-size:15px;min-height:150px}
+.transcript .caret{display:inline-block;width:2px;height:1em;background:var(--copper);vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.timer{font-family:var(--f-mono);font-size:13px;color:var(--copper)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.steps li{display:flex;gap:10px;align-items:center;color:var(--muted)}
+.steps li.done{color:var(--ink)}
+.steps li .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none}
+.steps li.done .dot{background:var(--ok);border-color:var(--ok)}
+
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;
+  padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.card:hover{border-color:var(--copper)}
+.card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.ico{width:40px;height:40px;border-radius:10px;background:var(--copper-soft);color:var(--copper);display:grid;place-items:center}
+.ico svg{width:22px;height:22px}
+.card b{display:block;font-size:15px}
+.card span.sub{display:block;font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:99px;white-space:nowrap}
+.pill.todo{background:var(--warn-soft);color:var(--warn)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.quote{font-size:13px;color:var(--muted);border-left:3px solid var(--copper);padding-left:10px;margin:0;font-style:italic}
+
+.btn{font:inherit;font-weight:700;border-radius:10px;padding:12px 16px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn.primary{background:var(--copper);border-color:var(--copper);color:#fff}
+.btn.ghost{background:transparent}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row .btn{flex:1}
+.back{all:unset;cursor:pointer;color:var(--copper);font-weight:600;font-size:14px}
+
+/* document preview */
+.doc{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:13px}
+.doc h3{font-family:var(--f-display);font-size:20px;margin:0 0 2px;text-transform:uppercase;letter-spacing:.03em}
+.doc .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-bottom:10px}
+.doc table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.doc th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--line);padding:4px 0}
+.doc td{padding:5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.doc td.n,.doc th.n{text-align:right;font-family:var(--f-mono);font-size:12px;white-space:nowrap;padding-left:8px}
+.doc .tot{margin-top:8px;display:grid;grid-template-columns:1fr auto;gap:2px 12px;font-family:var(--f-mono);font-size:12px}
+.doc .tot .big{font-weight:500;font-size:14px;color:var(--ink)}
+.doc p{margin:6px 0}
+.added{background:var(--copper-soft);border-radius:3px;padding:0 3px}
+.flag{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:8px 10px;font-size:13px}
+.mail{white-space:pre-line;font-size:14px}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{flex:1;font:inherit;font-size:13px;font-weight:600;padding:8px;border:none;background:transparent;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--copper-soft);color:var(--copper)}
+.toast{position:sticky;bottom:12px;background:var(--ink);color:var(--surface);padding:10px 14px;border-radius:10px;font-weight:600;font-size:14px;text-align:center}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+</head>
+<body>
+<div class="app" id="app" aria-live="polite"></div>
+<script>
+
+const ICONS={
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>',
+  facture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h3"/></svg>',
+  commande:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>',
+  devis:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></svg>',
+  relance:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>'
+};
+const TRANSCRIPT="Bon, fin de journée. Chez Martin c'est fini, le chauffe-eau est posé, j'ai rajouté une vanne d'arrêt, tu fais la facture. Chez Durand il me manque le mitigeur thermo, commande-le chez Cedeo, livré au dépôt jeudi. Madame Petit, à Aubière, elle veut refaire sa salle de bain, propose-lui un passage mardi. Et Dupont a toujours pas payé sa facture de septembre, relance-le gentiment.";
+
+const ACTIONS=[
+ {id:"facture",title:"Facture chantier Martin",sub:"Chauffe-eau 200 L · 816,20 € TTC",quote:"Chez Martin c'est fini… tu fais la facture.",done:"Facture prête à transmettre dans votre logiciel de facturation"},
+ {id:"commande",title:"Commande Cedeo",sub:"Mitigeur thermostatique · chantier Durand",quote:"Commande-le chez Cedeo, livré au dépôt jeudi.",done:"Commande prête à partir chez Cedeo"},
+ {id:"devis",title:"Rendez-vous + devis Mme Petit",sub:"Salle de bain · visite mardi 27/10",quote:"Elle veut refaire sa salle de bain, propose-lui un passage mardi.",done:"Proposition de rendez-vous prête à envoyer"},
+ {id:"relance",title:"Relance M. Dupont",sub:"Facture F-2026-087 · 1 240,00 € TTC",quote:"Dupont a toujours pas payé… relance-le gentiment.",done:"Relance prête à envoyer"}
+];
+const state={screen:"home",validated:{},tone:"cordial",timers:[]};
+const app=document.getElementById("app");
+const clear=()=>{state.timers.forEach(clearTimeout);state.timers.forEach(clearInterval);state.timers=[]};
+const later=(fn,ms)=>state.timers.push(setTimeout(fn,ms));
+
+function shell(inner){
+  app.innerHTML=`<div class="topbar"><div class="who">Plomberie Roche<small>Thomas Roche · Aubière (63)</small></div><span class="badge">Jeu. 22 oct.</span></div><div class="screen">${inner}</div>`;
+}
+
+function home(){
+  clear();state.screen="home";
+  shell(`<h2>Bonsoir Thomas.</h2><p class="lead">Racontez votre journée. Je prépare les documents, vous validez.</p>
+    <button class="mic" id="mic" aria-label="Commencer la dictée">${ICONS.mic}<span>Parler</span></button>
+    <p class="hint">Exemple : « Chez Martin c'est fini, fais la facture… »</p>`);
+  document.getElementById("mic").onclick=record;
+}
+
+function record(){
+  clear();state.screen="rec";
+  shell(`<div class="row" style="justify-content:space-between;align-items:center"><h2>Je vous écoute…</h2><span class="timer" id="t">0:00</span></div>
+    <div class="transcript" id="tr"><span class="caret"></span></div>
+    <button class="mic rec" id="stop" style="width:96px;height:96px;font-size:14px" aria-label="Terminer la dictée">${ICONS.mic}<span>Terminer</span></button>
+    <p class="hint">La dictée se termine seule, ou touchez « Terminer ».</p>`);
+  const words=TRANSCRIPT.split(" ");let i=0,sec=0;const tr=document.getElementById("tr"),t=document.getElementById("t");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const iv=setInterval(()=>{i++;tr.innerHTML=words.slice(0,i).join(" ")+' <span class="caret"></span>';if(i>=words.length){clearInterval(iv);later(processing,700)}},reduce?20:110);
+  const clk=setInterval(()=>{sec++;t.textContent="0:"+String(Math.min(sec,59)).padStart(2,"0")},1000);
+  state.timers.push(iv,clk);
+  document.getElementById("stop").onclick=processing;
+}
+
+function processing(){
+  clear();state.screen="proc";
+  const labels=["Transcription du message","4 demandes repérées","Clients et chantiers retrouvés","Documents préparés"];
+  shell(`<h2>Je trie votre message…</h2><ul class="steps" id="st">${labels.map(l=>`<li><span class="dot"></span>${l}</li>`).join("")}</ul>`);
+  const lis=[...document.querySelectorAll("#st li")];
+  lis.forEach((li,k)=>later(()=>li.classList.add("done"),400+k*450));
+  later(list,400+labels.length*450+300);
+}
+
+function list(toast){
+  clear();state.screen="list";
+  const n=Object.keys(state.validated).length;
+  shell(`<h2>${n===4?"Tout est validé.":"4 choses à valider"}</h2>
+    <p class="lead">${n===4?"Votre soirée est libre. Temps passé : 30 s de dictée et 4 validations.":"Touchez une ligne pour voir le document. Rien ne part sans votre accord."}</p>
+    ${ACTIONS.map(a=>`<button class="card" data-id="${a.id}"><span class="ico">${ICONS[a.id]}</span><span style="min-width:0"><b>${a.title}</b><span class="sub">${a.sub}</span></span>
+      <span class="pill ${state.validated[a.id]?"ok":"todo"}">${state.validated[a.id]?"Validé":"À valider"}</span></button>`).join("")}
+    <div class="row" style="margin-top:auto"><button class="btn ghost" id="replay">Rejouer la démo</button>${n<4?'<button class="btn primary" id="all">Tout valider</button>':""}</div>
+    ${toast?`<div class="toast">${toast}</div>`:""}`);
+  app.querySelectorAll(".card").forEach(c=>c.onclick=()=>detail(c.dataset.id));
+  document.getElementById("replay").onclick=()=>{state.validated={};state.tone="cordial";home()};
+  const all=document.getElementById("all");if(all)all.onclick=()=>{ACTIONS.forEach(a=>state.validated[a.id]=true);list("4 documents validés")};
+  if(toast)later(()=>{const t=app.querySelector(".toast");if(t)t.remove()},2600);
+}
+
+const eur=v=>v.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
+
+function docFor(id){
+  if(id==="facture"){
+    const L=[["Chauffe-eau électrique 200 L vertical",1,489],["Groupe de sécurité 3/4",1,38],["Raccords diélectriques + flexibles",1,24],["Vanne d'arrêt 1/4 de tour",1,35,true],["Main-d'œuvre (h)",3,52]];
+    const ht=L.reduce((s,l)=>s+l[1]*l[2],0),tva=Math.round(ht*10)/100;
+    return `<div class="doc"><h3>Facture</h3><div class="meta"><span>N° F-2026-112 · 22/10/2026</span><span>Mme Martin · 12 rue des Lilas, Aubière</span></div>
+      <table><thead><tr><th>Désignation</th><th class="n">Qté</th><th class="n">Montant HT</th></tr></thead><tbody>
+      ${L.map(l=>`<tr><td>${l[3]?`<span class="added">${l[0]}</span>`:l[0]}</td><td class="n">${l[1]}</td><td class="n">${eur(l[1]*l[2])}</td></tr>`).join("")}</tbody></table>
+      <div class="tot"><span>Total HT</span><span>${eur(ht)}</span><span>TVA 10 % (logement de plus de 2 ans)</span><span>${eur(tva)}</span><span class="big">Total TTC</span><span class="big">${eur(ht+tva)}</span></div>
+      <p style="color:var(--muted);font-size:12px">Reprise du devis D-2026-098 signé le 02/10. Paiement à 30 jours.</p></div>
+      <p class="flag">Ligne surlignée : ajoutée d'après votre message (« j'ai rajouté une vanne d'arrêt »), au prix de votre catalogue.</p>`;
+  }
+  if(id==="commande"){
+    return `<div class="doc"><h3>Bon de commande</h3><div class="meta"><span>À : Cedeo Clermont-Ferrand</span><span>Réf. chantier : DURAND</span></div>
+      <table><thead><tr><th>Article</th><th class="n">Réf.</th><th class="n">Qté</th></tr></thead><tbody>
+      <tr><td>Mitigeur thermostatique de douche, chromé</td><td class="n">MTD-3412</td><td class="n">1</td></tr></tbody></table>
+      <p><b>Livraison :</b> au dépôt, jeudi 29/10/2026</p><p><b>Compte client :</b> Plomberie Roche</p></div>
+      <p class="flag">Même modèle que votre dernière commande (chantier Bernard, août). Prix selon vos conditions Cedeo.</p>`;
+  }
+  if(id==="devis"){
+    return `<div class="doc"><h3>Message à Mme Petit</h3><div class="meta"><span>Par SMS</span><span>Mme Petit · Aubière</span></div>
+      <p class="mail">Bonjour Madame Petit,
+      Suite à votre demande pour votre salle de bain, je vous propose de passer mardi 27 octobre à 17 h pour voir les lieux et prendre les mesures.
+      Ce créneau vous convient-il ?
+      Thomas Roche, Plomberie Roche</p></div>
+      <div class="doc"><h3>Brouillon de devis</h3><div class="meta"><span>Rénovation salle de bain</span><span>Statut : à compléter</span></div>
+      <p>Lignes préparées après la visite : dépose, plomberie, douche, meuble vasque, faïence.</p></div>
+      <p class="flag">Il me manque les dimensions, le choix douche ou baignoire et le budget. Je ne les invente pas : ils seront remplis après votre visite.</p>`;
+  }
+  const mails={
+    cordial:`Bonjour Monsieur Dupont,
+    Sauf erreur de ma part, la facture F-2026-087 du 18 septembre (1 240,00 € TTC) n'a pas encore été réglée. L'échéance était le 18 octobre.
+    Pourriez-vous regarder cela quand vous aurez un moment ? Je vous remets la facture en pièce jointe.
+    Merci d'avance et bonne soirée,
+    Thomas Roche, Plomberie Roche`,
+    ferme:`Bonjour Monsieur Dupont,
+    La facture F-2026-087 du 18 septembre (1 240,00 € TTC) est échue depuis le 18 octobre et reste impayée malgré ce rappel.
+    Je vous remercie de procéder au règlement sous 8 jours. Passé ce délai, des pénalités de retard et l'indemnité forfaitaire de 40 € prévues par la loi pourront s'appliquer.
+    Facture en pièce jointe.
+    Thomas Roche, Plomberie Roche`};
+  return `<div class="seg" role="group" aria-label="Ton du message"><button id="tc" aria-pressed="${state.tone==="cordial"}">Ton cordial</button><button id="tf" aria-pressed="${state.tone==="ferme"}">Ton ferme</button></div>
+    <div class="doc"><h3>E-mail de relance</h3><div class="meta"><span>Objet : Facture F-2026-087</span><span>À : M. Dupont</span></div><p class="mail">${mails[state.tone]}</p></div>
+    <p class="flag">Première relance pour ce client. Le ton ferme est proposé à partir de la deuxième.</p>`;
+}
+
+function detail(id){
+  clear();state.screen="detail";
+  const a=ACTIONS.find(x=>x.id===id),v=state.validated[id];
+  shell(`<button class="back" id="bk">‹ Retour aux 4 actions</button>
+    <h2>${a.title}</h2><p class="quote">« ${a.quote} »</p>
+    ${docFor(id)}
+    <div class="row" style="margin-top:auto"><button class="btn ghost" id="bk2">Modifier</button><button class="btn primary" id="ok" ${v?"disabled":""}>${v?"Validé":"Valider"}</button></div>`);
+  document.getElementById("bk").onclick=()=>list();
+  document.getElementById("bk2").onclick=()=>list("Modification : dictez simplement la correction");
+  document.getElementById("ok").onclick=()=>{state.validated[id]=true;list(a.done)};
+  if(id==="relance"){
+    document.getElementById("tc").onclick=()=>{state.tone="cordial";detail(id)};
+    document.getElementById("tf").onclick=()=>{state.tone="ferme";detail(id)};
+  }
+}
+home();
+
+// Hauteur transmise a la page parente (demo.html) pour ajuster l'iframe
+new ResizeObserver(()=>parent.postMessage({ckfdDemoHeight:document.documentElement.scrollHeight},"*")).observe(document.body);
+</script>
+</body>
+</html>
