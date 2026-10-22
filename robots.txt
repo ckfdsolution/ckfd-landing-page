@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /construction.html
+
+Sitemap: https://www.ckfdsolution.fr/sitemap.xml
