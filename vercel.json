@@ -1,4 +1,8 @@
 {
   "cleanUrls": false,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/offres.html", "destination": "/gestion-administrative.html", "permanent": true },
+    { "source": "/demo.html", "destination": "/outils.html#demo", "permanent": true }
+  ]
 }

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="t"><title id="t">Document administratif validé</title>
+<circle cx="180" cy="120" r="100" fill="#FDEEDE"/>
+<path d="M148 52 h56 l26 26 v102 a8 8 0 0 1 -8 8 h-74 a8 8 0 0 1 -8 -8 v-120 a8 8 0 0 1 8 -8 z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" stroke-linejoin="round"/>
+<path d="M204 52 v18 a8 8 0 0 0 8 8 h18" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158 98 h50 M158 116 h58 M158 134 h40" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158 160 h24" stroke="#FF9A3C" stroke-width="4" stroke-linecap="round"/>
+<circle cx="228" cy="172" r="24" fill="#FF9A3C"/>
+<path d="M217 172 l8 8 l15 -16" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="t"><title id="t">Site internet et réseaux sociaux</title>
+<circle cx="180" cy="120" r="100" fill="#FDEEDE"/>
+<rect x="104" y="62" width="150" height="112" rx="10" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4"/>
+<path d="M104 84 h150" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="118" cy="73" r="3.5" fill="#FF9A3C"/><circle cx="130" cy="73" r="3.5" fill="#1A1A1A"/><circle cx="142" cy="73" r="3.5" fill="#1A1A1A"/>
+<path d="M122 106 h60 M122 122 h84" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="122" y="140" width="40" height="18" rx="9" fill="#FF9A3C"/>
+<path d="M226 128 h44 a12 12 0 0 1 12 12 v22 a12 12 0 0 1 -12 12 h-18 l-14 12 v-12 h-12 a12 12 0 0 1 -12 -12 v-22 a12 12 0 0 1 12 -12 z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4" stroke-linejoin="round"/>
+<path d="M248 165 c-10 -7 -12 -13 -8.5 -16.5 c3.5 -3.5 7.5 -1.5 8.5 1.5 c1 -3 5 -5 8.5 -1.5 c3.5 3.5 1.5 9.5 -8.5 16.5 z" fill="#FF9A3C"/>
+</svg>

@@ -130,7 +130,7 @@ function record(){
     <p class="hint">La dictée se termine seule, ou touchez « Terminer ».</p>`);
   const words=TRANSCRIPT.split(" ");let i=0,sec=0;const tr=document.getElementById("tr"),t=document.getElementById("t");
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const iv=setInterval(()=>{i++;tr.innerHTML=words.slice(0,i).join(" ")+' <span class="caret"></span>';if(i>=words.length){clearInterval(iv);later(processing,700)}},reduce?20:110);
+  const iv=setInterval(()=>{i++;tr.innerHTML=words.slice(0,i).join(" ")+' <span class="caret"></span>';if(i>=words.length){clearInterval(iv);later(processing,700)}},reduce?20:300);
   const clk=setInterval(()=>{sec++;t.textContent="0:"+String(Math.min(sec,59)).padStart(2,"0")},1000);
   state.timers.push(iv,clk);
   document.getElementById("stop").onclick=processing;

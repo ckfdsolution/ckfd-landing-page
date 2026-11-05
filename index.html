@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="msvalidate.01" content="67AC77910C7FA93479D313AF6CF95328" />
   <title>CKFD Solution · Gagnez de l'argent en gagnant du temps · Artisans & TPE · Puy-de-Dôme</title>
-  <meta name="description" content="Gagnez de l'argent en gagnant du temps grâce à nos outils et notre accompagnement. CKFD Solution prend en charge la gestion administrative et RH des artisans et TPE du Puy-de-Dôme : facturation, relances, devis, paie, tableaux de bord. Audit gratuit.">
+  <meta name="description" content="Gagnez de l'argent en gagnant du temps. CKFD Solution accompagne les artisans, professions libérales et TPE : gestion administrative et RH dans le Puy-de-Dôme, outils sur mesure, sites vitrines et réseaux sociaux partout en France. Audit gratuit d'une heure.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     "url": "https://www.ckfdsolution.fr/",
     "logo": "https://www.ckfdsolution.fr/assets/logo-ckfd.png",
     "image": "https://www.ckfdsolution.fr/assets/karine-cecile.jpg",
-    "description": "Gestion administrative et RH pour les artisans, professions libérales et TPE du Puy-de-Dôme : facturation, relances, suivi des devis, préparation de la paie, tableaux de bord et outils sur mesure.",
+    "description": "Gestion administrative et RH pour les artisans, professions libérales et TPE du Puy-de-Dôme : facturation, relances, suivi des devis, préparation de la paie, tableaux de bord. Outils sur mesure, sites vitrines et réseaux sociaux partout en France.",
     "slogan": "Vous faites votre métier. Nous veillons sur le reste.",
     "email": "contact@ckfdsolution.fr",
     "telephone": "+33679020512",
@@ -32,10 +32,10 @@
       "addressRegion": "Auvergne-Rhône-Alpes",
       "addressCountry": "FR"
     },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Puy-de-Dôme"
-    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Puy-de-Dôme" },
+      { "@type": "Country", "name": "France" }
+    ],
     "identifier": [
       {
         "@type": "PropertyValue",
@@ -71,12 +71,12 @@
     "priceRange": "À partir de 100 € HT / mois",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Formules de gestion administrative",
+      "name": "Services CKFD Solution",
       "itemListElement": [
         {
           "@type": "Offer",
           "name": "À jour",
-          "url": "https://www.ckfdsolution.fr/offres.html",
+          "url": "https://www.ckfdsolution.fr/gestion-administrative.html#formules",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
             "price": 100,
@@ -88,7 +88,7 @@
         {
           "@type": "Offer",
           "name": "Développement",
-          "url": "https://www.ckfdsolution.fr/offres.html",
+          "url": "https://www.ckfdsolution.fr/gestion-administrative.html#formules",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
             "price": 180,
@@ -100,7 +100,7 @@
         {
           "@type": "Offer",
           "name": "Pilotage",
-          "url": "https://www.ckfdsolution.fr/offres.html",
+          "url": "https://www.ckfdsolution.fr/gestion-administrative.html#formules",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
             "price": 260,
@@ -112,12 +112,17 @@
         {
           "@type": "Offer",
           "name": "Gestion RH",
-          "url": "https://www.ckfdsolution.fr/offres.html#rh"
+          "url": "https://www.ckfdsolution.fr/gestion-administrative.html#rh"
         },
         {
           "@type": "Offer",
           "name": "Outils sur mesure",
-          "url": "https://www.ckfdsolution.fr/offres.html#outils"
+          "url": "https://www.ckfdsolution.fr/outils.html"
+        },
+        {
+          "@type": "Offer",
+          "name": "Sites vitrines et réseaux sociaux",
+          "url": "https://www.ckfdsolution.fr/communication.html"
         }
       ]
     }
@@ -126,23 +131,19 @@
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <div class="container">
     <a href="index.html" class="navbar-logo">
       <img src="assets/logo-ckfd.png" alt="ckfd solution, gestion administrative">
-      <span class="logo-sub">Gestion administrative · Puy-de-Dôme</span>
     </a>
     <ul class="navbar-nav">
       <li><a href="index.html" class="active">Accueil</a></li>
       <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-      <li><a href="offres.html">Offres &amp; tarifs</a></li>
-      <li><a href="demo.html">Démo</a></li>
+      <li><a href="gestion-administrative.html">Gestion administrative</a></li>
+      <li><a href="outils.html">Outils sur mesure</a></li>
+      <li><a href="communication.html">Communication</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="navbar-actions">
-      <a href="contact.html" class="btn btn-primary">Audit gratuit</a>
-    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -152,10 +153,10 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Accueil</a>
   <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-  <a href="offres.html">Offres &amp; tarifs</a>
-  <a href="demo.html">Démo</a>
+  <a href="gestion-administrative.html">Gestion administrative</a>
+  <a href="outils.html">Outils sur mesure</a>
+  <a href="communication.html">Communication</a>
   <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-primary">Audit gratuit</a>
 </div>
 
 <!-- ===== CHAÎNE DES PUYS (haut) ===== -->
@@ -173,10 +174,10 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="tag">Gestion administrative &amp; RH · Artisans &amp; TPE · Puy-de-Dôme</div>
+        <div class="tag">Artisans · Professions libérales · TPE · Puy-de-Dôme &amp; France entière</div>
         <h1 class="hero-title">
           Gagnez de l'argent<br>
-          <span>en gagnant du temps.</span>
+          <span>en gagnant du temps</span>
         </h1>
         <p class="hero-subtitle">
           Grâce à nos outils et à notre accompagnement, vos factures partent, vos devis
@@ -188,16 +189,23 @@
         </p>
         <div class="hero-actions">
           <a href="contact.html" class="btn btn-primary btn-lg">Demander l'audit gratuit</a>
-          <a href="demo.html" class="btn btn-outline btn-lg">Voir une démo</a>
+          <a href="#services" class="btn btn-outline btn-lg">Découvrir nos services</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-brand">
           <img src="assets/logo-ckfd.png" alt="ckfd solution, gestion administrative">
-          <p class="hero-brand-sub">Gestion administrative · Puy-de-Dôme</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== ZONE D'INTERVENTION ===== -->
+<section class="coverage-strip" aria-label="Zone d'intervention">
+  <div class="container">
+    <p>À vos côtés dans le Puy-de-Dôme<span class="coverage-sep"> · </span><br class="coverage-break">À distance partout en France</p>
+    <a href="contact.html">Premier échange gratuit d'une heure →</a>
   </div>
 </section>
 
@@ -206,13 +214,11 @@
   <div class="container">
     <div class="conviction-box">
       <div class="tag">Notre conviction</div>
-      <p class="lead">Votre métier mérite toute votre attention. La gestion de votre entreprise ne devrait pas vous en détourner.</p>
       <p>On ne crée pas une entreprise pour passer ses soirées dans les papiers, courir après un devis
         ou s'endormir en se demandant ce qu'on a oublié. On la crée pour exercer son métier,
         développer son savoir-faire et satisfaire ses clients.</p>
-      <p><strong>Notre rôle n'est pas de faire de vous un gestionnaire. Il est de vous rendre à votre métier.</strong>
-        Prendre en charge ce qui peut l'être. Suivre ce qui doit l'être. Et vous donner une vision assez claire
-        de votre entreprise pour décider en confiance.</p>
+      <p>Nous sommes là pour prendre en charge ce qui peut l'être, suivre ce qui doit l'être, et vous donner
+        une vision assez claire de votre entreprise pour décider en confiance.</p>
       <p>Vous restez maître de votre entreprise et de vos choix. Nous faisons simplement en sorte
         que vous n'ayez plus à tout porter seul.</p>
       <p class="signature">Vous faites votre métier. Nous veillons sur le reste.</p>
@@ -220,73 +226,125 @@
   </div>
 </section>
 
-<!-- ===== CE QUE NOUS PRENONS EN CHARGE ===== -->
-<section id="prestations">
+<!-- ===== NOS SOLUTIONS ===== -->
+<section id="services">
   <div class="container">
     <div class="section-head">
-      <div class="tag">Ce que nous prenons en charge</div>
-      <h2 class="section-title">Tout ce qui vous éloigne de votre métier,<br>mais reste indispensable.</h2>
-      <p class="section-subtitle">Vous choisissez ce que vous nous confiez et vous gardez le pilotage. Nous nous occupons du reste et vous donnons la visibilité pour décider.</p>
+      <div class="tag">Nos solutions</div>
+      <h2 class="section-title">Vous choisissez ce que vous nous confiez</h2>
+      <p class="section-subtitle">Nous prenons en charge votre administratif, concevons des outils adaptés à votre activité et développons votre communication.</p>
     </div>
-    <div class="cards-grid">
-      <div class="card reveal">
-        <div class="card-icon">🧾</div>
-        <h3>Facturation &amp; relances</h3>
-        <p>Émission et envoi de vos factures, suivi des règlements, relances de paiement graduées et alertes en cas de retard. Vos papiers ne traînent plus.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icon">📁</div>
-        <h3>Suivi clients &amp; devis</h3>
-        <p>Suivi et relance de vos devis en attente, tenue de vos fichiers clients et fournisseurs, gestion de vos rendez-vous. Vous ne perdez plus de chantiers.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icon">📊</div>
-        <h3>Pilotage &amp; visibilité</h3>
-        <p>Un tableau de bord clair : chiffre d'affaires, marge, trésorerie. Et le suivi de vos échéances (TVA, URSSAF, assurances). Vous savez où vous en êtes.</p>
-      </div>
-    </div>
-    <div class="cards-grid two" style="margin-top:24px;">
-      <div class="card reveal">
-        <div class="card-icon">👷</div>
-        <h3>Gestion RH</h3>
-        <p>Éléments variables de paie préparés pour votre cabinet comptable, DPAE, visites médicales du travail, documents obligatoires. Vos salariés sont en règle, vous n'y pensez plus.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icon">🛠️</div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <img class="service-illus" src="assets/illus-gestion.svg" alt="" width="360" height="240">
+        <h3>Gestion administrative</h3>
+        <p>Vous nous confiez les tâches administratives que nous réalisons à vos côtés.</p>
+        <ul class="check-list">
+          <li>Facturation &amp; relances</li>
+          <li>Suivi clients &amp; devis</li>
+          <li>Pilotage &amp; visibilité</li>
+          <li>Gestion RH</li>
+        </ul>
+        <div class="service-tags">
+          <span>Formules mensuelles sans engagement</span>
+          <span>À partir de 100 € HT / mois</span>
+        </div>
+        <a href="gestion-administrative.html" class="service-link">Découvrir cette offre →</a>
+      </article>
+      <article class="service-card reveal">
+        <img class="service-illus" src="assets/illus-outils.svg" alt="" width="360" height="240">
         <h3>Outils sur mesure</h3>
-        <p>Des outils simples, pensés pour votre quotidien : vous dictez votre journée depuis le camion, les documents sont prêts à valider. <a href="demo.html" style="color:var(--accent-ink);font-weight:700;">Voir la démo →</a></p>
-      </div>
+        <p>Des automatisations conçues autour de votre façon de travailler et de vos logiciels. Elles préparent les actions ; vous vérifiez et validez avant tout envoi ou toute décision.</p>
+        <div class="service-tags">
+          <span>Validation humaine à chaque étape clé</span>
+          <span>Sur devis</span>
+        </div>
+        <a href="outils.html" class="service-link">Découvrir les outils et la démo →</a>
+      </article>
+      <article class="service-card reveal">
+        <img class="service-illus" src="assets/illus-communication.svg" alt="" width="360" height="240">
+        <h3>Communication</h3>
+        <p>Une présence en ligne cohérente, construite selon vos besoins et votre activité.</p>
+        <div class="service-offers">
+          <div class="service-offer">
+            <h4>Sites vitrines</h4>
+            <p>Conception, rédaction, hébergement et maintenance.</p>
+          </div>
+          <div class="service-offer">
+            <h4>Réseaux sociaux</h4>
+            <p>Stratégie, textes, visuels, programmation, publication et suivi. Le rythme est défini ensemble.</p>
+          </div>
+        </div>
+        <div class="service-tags">
+          <span>LinkedIn · Facebook · Google Business</span>
+          <span>Sur devis</span>
+        </div>
+        <a href="communication.html" class="service-link">Découvrir la communication →</a>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- ===== DÉLÉGUER, GARDER LA MAIN OU COMBINER ===== -->
+<section class="section-soft" id="cas-usage">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Déléguer, garder la main ou combiner</h2>
+    </div>
+    <a class="usecase-card reveal" href="outils.html#demo">
+      <span class="badge-demo">Démo</span>
+      <div class="usecase-sector">Débrief vocal de chantier</div>
+      <h3>Une dictée, des documents prêts à vérifier</h3>
+      <p>Un artisan raconte sa journée ; l'outil prépare une facture, une commande, un rendez-vous et une relance. Rien ne part sans son accord.</p>
+      <span class="service-link">Voir la démonstration →</span>
+    </a>
+  </div>
+</section>
+
 <!-- ===== COMMENT ÇA SE PASSE ===== -->
-<section class="section-soft" id="methodo">
+<section id="methodo">
   <div class="container">
     <div class="section-head">
       <div class="tag">Comment ça se passe</div>
-      <h2 class="section-title">Simple, progressif, sans engagement.</h2>
+      <h2 class="section-title">Simple, progressif et sans surprise</h2>
+      <p class="section-subtitle">On commence par comprendre votre quotidien. Vous choisissez ensuite ce que vous souhaitez déléguer, équiper ou faire évoluer.</p>
     </div>
     <div class="steps-grid">
       <div class="step reveal">
-        <div class="step-number">01</div>
-        <h3>L'audit gratuit</h3>
-        <p>30 minutes ensemble, sans engagement. Vous repartez avec un chiffre : ce que votre administratif vous coûte vraiment.</p>
+        <div class="step-label">Premier échange</div>
+        <h3>On fait le point</h3>
+        <p>Vous nous expliquez votre activité, vos irritants et ce que vous aimeriez simplifier.</p>
+        <ul class="check-list">
+          <li>Sans engagement</li>
+          <li>À distance ou dans le Puy-de-Dôme</li>
+        </ul>
       </div>
       <div class="step reveal">
-        <div class="step-number">02</div>
-        <h3>On cale votre formule</h3>
-        <p>On choisit ensemble la formule et le niveau qui correspondent à votre situation réelle.</p>
+        <div class="step-label">Sur mesure</div>
+        <h3>On définit la bonne réponse</h3>
+        <p>Nous précisons ensemble le périmètre, les outils concernés et le niveau d'accompagnement.</p>
+        <ul class="check-list">
+          <li>Priorités clarifiées</li>
+          <li>Devis personnalisé</li>
+        </ul>
       </div>
       <div class="step reveal">
-        <div class="step-number">03</div>
-        <h3>Le démarrage</h3>
-        <p>Comptez une quinzaine de jours entre votre accord et le premier mois complet pris en charge.</p>
+        <div class="step-label">Selon le projet</div>
+        <h3>On met en place</h3>
+        <p>Nous réalisons la prestation convenue et l'intégrons à votre organisation.</p>
+        <ul class="check-list">
+          <li>Prise en main accompagnée</li>
+          <li>Validation humaine aux étapes utiles</li>
+        </ul>
       </div>
       <div class="step reveal">
-        <div class="step-number">04</div>
-        <h3>Le suivi</h3>
-        <p>Un point mensuel compris dans chaque formule. On ajuste au fil du temps, jamais de surprise.</p>
+        <div class="step-label">Dans la durée</div>
+        <h3>On reste à vos côtés</h3>
+        <p>Nous faisons le point, ajustons le service et assurons la maintenance prévue pour votre projet.</p>
+        <ul class="check-list">
+          <li>Point mensuel pour les formules de gestion administrative</li>
+          <li>Démarrage en une quinzaine de jours</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -296,16 +354,12 @@
 <section class="cta-final" id="audit">
   <div class="container">
     <div class="cta-box">
-      <div class="tag">Avant de choisir</div>
-      <h2 class="section-title">Commençons par l'audit gratuit.</h2>
-      <p class="section-subtitle">
-        30 minutes avec vous, sans engagement. Vous en ressortez avec un chiffre :
-        ce que votre administratif vous coûte réellement en temps et en chiffre d'affaires,
-        et la formule qui correspond à votre situation.
-      </p>
+      <div class="tag">Faisons connaissance</div>
+      <h2 class="section-title">Parlons de votre entreprise</h2>
+      <p class="section-subtitle">Une heure gratuite pour comprendre votre situation et voir ce qui vous ferait gagner du temps.</p>
       <div class="cta-perks">
-        <div class="cta-perk">Premier échange 100 % gratuit</div>
-        <div class="cta-perk">Sans engagement</div>
+        <div class="cta-perk">Gratuit et sans engagement</div>
+        <div class="cta-perk">Pour toutes nos prestations</div>
         <div class="cta-perk">Réponse sous 24 h ouvrées</div>
       </div>
       <div style="margin-top:28px;">
@@ -334,8 +388,8 @@
           <span class="logo-name">ckfd <span>solution</span></span>
         </div>
         <p class="footer-description">
-          Gestion administrative pour les artisans, professions libérales et TPE du Puy-de-Dôme.
-          Vous faites votre métier, nous veillons sur le reste.
+          Gestion administrative, outils sur mesure et communication pour les artisans,
+          professions libérales et TPE. Vous faites votre métier, nous veillons sur le reste.
         </p>
         <span class="footer-immat">SAS · RCS Clermont-Ferrand 131 251 092</span>
       </div>
@@ -344,25 +398,26 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-          <li><a href="offres.html">Offres &amp; tarifs</a></li>
-          <li><a href="demo.html">Démo</a></li>
+          <li><a href="gestion-administrative.html">Gestion administrative</a></li>
+          <li><a href="outils.html">Outils sur mesure</a></li>
+          <li><a href="communication.html">Communication</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Nos formules</h4>
+        <h4>Nos services</h4>
         <ul>
-          <li><a href="offres.html">À jour</a></li>
-          <li><a href="offres.html">Développement</a></li>
-          <li><a href="offres.html">Pilotage</a></li>
-          <li><a href="offres.html#rh">Gestion RH</a></li>
-          <li><a href="offres.html#outils">Outils sur mesure</a></li>
+          <li><a href="gestion-administrative.html#formules">Formules À jour, Développement, Pilotage</a></li>
+          <li><a href="gestion-administrative.html#rh">Gestion RH</a></li>
+          <li><a href="outils.html">Outils sur mesure</a></li>
+          <li><a href="outils.html#demo">Démo du débrief vocal</a></li>
+          <li><a href="communication.html">Sites vitrines et réseaux sociaux</a></li>
           <li><a href="contact.html">Audit gratuit</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <div class="footer-contact-item">📍 <span>Puy-de-Dôme (63)<br>Auvergne-Rhône-Alpes</span></div>
+        <div class="footer-contact-item">📍 <span>Puy-de-Dôme (63)<br>et à distance partout en France</span></div>
         <div class="footer-contact-item">✉️ <a href="mailto:contact@ckfdsolution.fr">contact@ckfdsolution.fr</a></div>
         <div class="footer-contact-item">📞 <span>Karine · <a href="tel:+33679020512">06 79 02 05 12</a><br>Cécile · <a href="tel:+33613632415">06 13 63 24 15</a></span></div>
       </div>
@@ -373,7 +428,7 @@
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="politique-confidentialite.html">Politique de confidentialité</a>
       </div>
-      <p>Gestion administrative · Puy-de-Dôme</p>
+      <p>Gestion administrative · Puy-de-Dôme &amp; France entière</p>
     </div>
   </div>
 </footer>
