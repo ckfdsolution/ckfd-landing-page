@@ -3,6 +3,8 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/offres.html", "destination": "/gestion-administrative.html", "permanent": true },
-    { "source": "/demo.html", "destination": "/outils.html#demo", "permanent": true }
+    { "source": "/demo.html", "destination": "/outils.html#demo", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/construction.html", "destination": "/", "permanent": true }
   ]
 }
