@@ -499,3 +499,9 @@ h1.tag { line-height: inherit; }
 .footer-brand a, .footer-bottom p a { text-decoration: underline; text-underline-offset: 2px; }
 .footer-brand a:hover, .footer-bottom p a:hover { color: var(--accent); }
 .nowrap { white-space: nowrap; }
+
+/* Très petits écrans (moins de 360 px) : les boutons peuvent passer à la ligne au lieu de déborder */
+@media (max-width: 359px) {
+  .btn { white-space: normal; text-align: center; }
+  .btn-lg { padding: 14px 22px; }
+}
