@@ -126,7 +126,7 @@ if (contactForm) {
       });
 
       if (res.ok || res.status === 200) {
-        showMessage('success', '✅ Message envoyé ! Nous vous répondons sous 24h ouvrées.');
+        showMessage('success', '✅ Message envoyé ! Nous vous répondons sous 24 h ouvrées.');
         contactForm.reset();
       } else {
         throw new Error(`HTTP ${res.status}`);
