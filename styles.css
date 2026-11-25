@@ -491,3 +491,11 @@ footer h4 { color: #fff; font-size: .82rem; text-transform: uppercase; letter-sp
 
 /* Encadrés : même fond orange pâle que le bandeau du haut */
 .card { background: #fdeede; border-color: #f6dcc0; }
+
+/* SEO : le H1 est l'étiquette, le grand titre visuel est un <p> au même style */
+p.hero-title, p.section-title { color: var(--ink); line-height: 1.15; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+p.hero-title { font-weight: 900; }
+h1.tag { line-height: inherit; }
+.footer-brand a, .footer-bottom p a { text-decoration: underline; text-underline-offset: 2px; }
+.footer-brand a:hover, .footer-bottom p a:hover { color: var(--accent); }
+.nowrap { white-space: nowrap; }
